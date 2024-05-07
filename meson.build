@@ -330,6 +330,6 @@ endif
 
 libalpm = dependency('libalpm', required: get_option('libalpm'))
 
-if libalpm.found()
+if libalpm.found() and systemd.found()
   subdir('libalpm/hooks')
 endif
