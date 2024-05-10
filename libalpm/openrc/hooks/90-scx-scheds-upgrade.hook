@@ -1,6 +1,6 @@
 [Trigger]
 Type = Path
-Operation = Install
+Operation = Upgrade
 Target = etc/conf.d/scx
 Target = etc/default/scx
 Target = etc/init.d/scx
