@@ -11,6 +11,7 @@ ExecStart=/bin/bash -c 'exec $SCX_SCHEDULER $SCX_FLAGS '
 Restart=on-failure
 StandardError=journal
 LogNamespace=sched-ext
+ReadOnlyPaths=/sys/kernel/sched_ext
 
 [Install]
 WantedBy=graphical.target
