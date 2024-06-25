@@ -1,0 +1,9 @@
+[Unit]
+Description=Run scx schedulers
+
+[Timer]
+OnBootSec=30sec
+Unit=scx.service
+
+[Install]
+WantedBy=graphical.target
