@@ -101,6 +101,10 @@ pub fn get_default_config() -> Config {
                 "scx_tickless".to_string(),
                 get_default_sched_for_config(&SupportedSched::Tickless),
             ),
+            (
+                "scx_wd40".to_string(),
+             get_default_sched_for_config(&SupportedSched::WD40),
+            ),
         ]),
     }
 }
@@ -216,6 +220,8 @@ fn get_default_scx_flags_for_mode(scx_sched: &SupportedSched, sched_mode: SchedM
             SchedMode::Server => vec!["-f", "100"],
             SchedMode::Auto => vec![],
         },
+        // scx_wd40 doesn't support any of these modes
+        SupportedSched::WD40 => vec![],
     }
 }
 
@@ -269,6 +275,13 @@ gaming_mode = ["-f", "5000", "-s", "5000"]
 lowlatency_mode = ["-f", "5000", "-s", "1000"]
 powersave_mode = ["-f", "50", "-p"]
 server_mode = ["-f", "100"]
+
+[scheds.scx_wd40]
+auto_mode = []
+gaming_mode = []
+lowlatency_mode = []
+powersave_mode = []
+server_mode = []
 "#;
 
         let parsed_config = parse_config_content(config_str).expect("Failed to parse config");

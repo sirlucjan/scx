@@ -95,6 +95,7 @@ impl ScxLoader {
             "scx_p2dq",
             "scx_tickless",
             "scx_rusty",
+            "scx_wd40",
         ]
     }
 

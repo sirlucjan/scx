@@ -54,6 +54,12 @@ auto_mode = []
 gaming_mode = ["-f 5000 -s 5000"]
 lowlatency_mode = ["-f 5000 -s 1000"]
 powersave_mode = ["-f 50 -p"]
+
+[scheds.scx_wd40]
+auto_mode = []
+gaming_mode = []
+lowlatency_mode = []
+powersave_mode = []
 ```
 
 **`default_sched`:**
