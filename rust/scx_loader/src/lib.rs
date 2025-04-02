@@ -32,6 +32,8 @@ pub enum SupportedSched {
     P2DQ,
     #[serde(rename = "scx_tickless")]
     Tickless,
+    #[serde(rename = "scx_wd40")]
+    WD40,
 }
 
 impl FromStr for SupportedSched {
@@ -45,6 +47,7 @@ impl FromStr for SupportedSched {
             "scx_p2dq" => Ok(SupportedSched::P2DQ),
             "scx_tickless" => Ok(SupportedSched::Tickless),
             "scx_rusty" => Ok(SupportedSched::Rusty),
+            "scx_wd40" => Ok(SupportedSched::WD40),
             _ => Err(anyhow::anyhow!("{scx_name} is not supported")),
         }
     }
@@ -66,6 +69,7 @@ impl From<SupportedSched> for &str {
             SupportedSched::P2DQ => "scx_p2dq",
             SupportedSched::Tickless => "scx_tickless",
             SupportedSched::Rusty => "scx_rusty",
+            SupportedSched::WD40 => "scx_wd40",
         }
     }
 }
