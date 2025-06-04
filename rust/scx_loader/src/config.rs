@@ -105,6 +105,10 @@ pub fn get_default_config() -> Config {
                 "scx_rustland".to_string(),
                 get_default_sched_for_config(&SupportedSched::Rustland),
             ),
+            (
+                "scx_wd40".to_string(),
+                get_default_sched_for_config(&SupportedSched::WD40),
+            ),
         ]),
     }
 }
@@ -222,6 +226,8 @@ fn get_default_scx_flags_for_mode(scx_sched: &SupportedSched, sched_mode: SchedM
         },
         // scx_rustland doesn't support any of these modes
         SupportedSched::Rustland => vec![],
+        // scx_wd40 doesn't support any of these modes
+        SupportedSched::WD40 => vec![],
     }
 }
 
@@ -277,6 +283,13 @@ powersave_mode = ["-f", "50", "-p"]
 server_mode = ["-f", "100"]
 
 [scheds.scx_rustland]
+auto_mode = []
+gaming_mode = []
+lowlatency_mode = []
+powersave_mode = []
+server_mode = []
+
+[scheds.scx_wd40]
 auto_mode = []
 gaming_mode = []
 lowlatency_mode = []
