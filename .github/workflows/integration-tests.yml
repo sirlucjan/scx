@@ -100,7 +100,7 @@ jobs:
       # this is where errors we want logs on start occurring, so always generate debug info and save logs
         if: always()
       # Stress schedulers
-      - uses: cytopia/shell-command-retry-action@v0.1.2
+      - uses: cytopia/shell-command-retry-action@v0.1.6
         name: stress test
         if: always()
         with:
